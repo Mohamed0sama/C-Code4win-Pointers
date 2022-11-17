@@ -1,0 +1,29 @@
+#include "stdio.h"
+
+#define row 2
+#define column 2
+#define word_size 100
+
+
+void concatenate(char* word,char *copied_word, int size) {
+	int i = 0;
+	int j = 0;
+	while (word[i] != '\0') {
+		i++;
+	}
+	while (copied_word[j] != '\0') {
+		word[i] = copied_word[j];
+		i++;
+		j++;
+	}
+	word[i] = '\0';
+}
+
+void main(void) {
+	char copied_word[word_size];
+	char word[word_size];
+	gets(word);
+	gets(copied_word);
+	concatenate(word,copied_word, word_size);
+	puts(word);
+}
