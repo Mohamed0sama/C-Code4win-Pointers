@@ -1,0 +1,28 @@
+#include "stdio.h"
+
+#define row 3
+#define column 3
+
+
+print_Array(int (* matrix)[column], int rows, int columns) {
+	for (int i = 0; i < rows; i++) {
+		for (int j = 0; j < columns; j++) {
+			printf("%d ",matrix[i][j]);
+		}
+		printf("\n");
+	}
+}
+
+void enter_Array(int matrix[][column], int rows, int columns) {
+	for (int i = 0; i < rows; i++) {
+		for (int j = 0; j < columns; j++) {
+			scanf_s("%d", &matrix[i][j]);
+		}
+	}
+}
+
+void main(void) {
+	int matrix[row][column];
+	enter_Array(matrix, row, column);
+	print_Array(matrix, row, column);
+}
