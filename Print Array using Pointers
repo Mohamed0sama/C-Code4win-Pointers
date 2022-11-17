@@ -1,0 +1,12 @@
+#include "stdio.h"
+
+
+void main(void) {
+	int arr[]={1,2,3,4,5};
+	int i;
+	int array_size = sizeof(arr) / sizeof(arr[0]);
+	int* ptr = arr;
+	for (i = 0; i < array_size; i++,ptr++) {
+		printf("Element[%d] = %d\n", i, *ptr);
+	}
+}
