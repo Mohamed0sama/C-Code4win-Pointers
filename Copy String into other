@@ -1,0 +1,18 @@
+#include "stdio.h"
+
+#define row 2
+#define column 2
+#define word_size 100
+
+
+void copy(char* word,char *copied_word, int size) {
+	while (*(copied_word++) = *(word++));
+}
+
+void main(void) {
+	char copied_word[word_size];
+	char word[word_size];
+	gets(word);
+	copy(word,copied_word, word_size);
+	puts(copied_word);
+}
