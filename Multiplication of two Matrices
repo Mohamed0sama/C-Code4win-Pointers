@@ -1,0 +1,51 @@
+#include "stdio.h"
+
+#define row 3
+#define column 3
+
+
+print_Array(int (* matrix)[column], int rows, int columns) {
+	for (int i = 0; i < rows; i++) {
+		for (int j = 0; j < columns; j++) {
+			printf("%d ",matrix[i][j]);
+		}
+		printf("\n");
+	}
+}
+
+void enter_Array(int matrix[][column], int rows, int columns) {
+	for (int i = 0; i < rows; i++) {
+		for (int j = 0; j < columns; j++) {
+			scanf_s("%d", &matrix[i][j]);
+		}
+	}
+}
+void multiply(int matrix[][column], int matrix1[][column], int multiplication[][column],int rows,int columns) {
+	int sum;
+	int i, j, k;
+	for (i = 0; i < rows; i++) {
+		for (j = 0; j < columns; j++) {
+			sum = 0;
+			for (k = 0; k < columns; k++) {
+				 sum+= *(*(matrix+i)+k) * *(*(matrix1+k)+j);
+
+			}
+			*(*(multiplication + i) + j) = sum;
+		}
+	}
+}
+
+void main(void) {
+	int matrix[row][column];
+	int matrix1[row][column];
+	int multiplication[row][column];
+	printf("enter first matrix\n");
+	enter_Array(matrix, row, column);
+	print_Array(matrix, row, column);
+	printf("enter second matrix\n");
+	enter_Array(matrix1, row, column);
+	print_Array(matrix, row, column);
+	printf("multiplication of two matrix = \n");
+	multiply(matrix, matrix1,multiplication, row, column);
+	print_Array(multiplication, row, column);
+}
