@@ -1,0 +1,30 @@
+#include "stdio.h"
+
+#define row 2
+#define column 2
+#define word_size 100
+
+
+int compare(char* word, char* copied_word) {
+	while ((*word && *copied_word) && (*word == *copied_word)) {
+		word++;
+		copied_word++;
+	}
+	return *word-*copied_word;
+}
+
+void main(void) {
+	char copied_word[word_size];
+	char word[word_size];
+	int result;
+	gets(word);
+	gets(copied_word);
+	result = compare(word, copied_word);
+	if (result == 0)
+	{
+		printf("Both strings are equal.");
+	}
+	else{
+		printf("Both strings are not equal");
+	}
+}
